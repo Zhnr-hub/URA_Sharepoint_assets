@@ -8,15 +8,26 @@
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-    background: #f9f9f9;
-    min-height: 500px;
+    background: #ffffff;
+    min-height: 700px;
   }
 
   h2 {
     color: #1a1a2e;
-    margin-bottom: 30px;
-    font-size: 1.4rem;
+    margin-bottom: 4px;
+    font-size: 1.5rem;
     text-align: center;
+  }
+
+  .pyramid-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+  }
+
+  .pyramid-subtitle u {
+    text-decoration: underline;
   }
 
   .pyramid-wrapper {
@@ -35,52 +46,87 @@
     gap: 6px;
   }
 
+  .pyramid {
+    gap: 0 !important;
+  }
+
   .tier {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: filter 0.2s ease, transform 0.2s ease;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    background: #bfe6bd;
+    border: 2px solid #e2751a;
+    box-sizing: border-box;
   }
 
   .tier:hover {
-    filter: brightness(1.15);
-    transform: scaleX(1.03);
+    filter: brightness(0.96);
+    transform: scaleX(1.02);
   }
 
   .tier-inner {
-    color: white;
+    color: #2e4ea0;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     text-align: center;
-    padding: 10px 20px;
+    padding: 6px 14px;
     width: 100%;
   }
 
   .tier-1 {
-    width: 200px;
-    height: 70px;
-    background: #c0392b;
+    width: 186px;
+    height: 125px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+
+  .tier-1 .tier-inner {
+    padding: 70px 4px 0 4px;
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .tier-1 .tier-percent {
+    font-size: 0.8rem;
+    margin-top: 1px;
+  }
+
+  .tier-1 .tier-label {
+    font-size: 0.55rem;
+    margin-top: 2px;
   }
 
   .tier-2 {
-    width: 320px;
-    height: 70px;
-    background: #e67e22;
+    width: 371px;
+    height: 125px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
   }
 
   .tier-3 {
-    width: 440px;
-    height: 70px;
-    background: #2980b9;
+    width: 640px;
+    height: 181px;
+    clip-path: polygon(20.97% 0%, 79.03% 0%, 100% 100%, 0% 100%);
+  }
+
+  .tier-percent {
+    display: block;
+    font-size: 1.15rem;
+    margin-top: 2px;
+  }
+
+  .tier-3 .tier-percent {
+    font-size: 2.4rem;
+    color: #1a1a2e;
   }
 
   .tier-label {
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.85);
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
     display: block;
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
   .info-panel {
@@ -142,6 +188,7 @@
 
 <div class="pyramid-container">
   <h2>URA's AI Competency Pyramid</h2>
+  <div class="pyramid-subtitle"><u>Possible</u> Tiering for URA by 2030</div>
   <div class="pyramid-wrapper">
 
     <div class="pyramid">
@@ -151,7 +198,8 @@
            onmouseleave="hideInfo()">
         <div class="tier-inner">
           AI Specialists
-          <span class="tier-label">~3% (~30 pax)</span>
+          <span class="tier-percent">~3%</span>
+          <span class="tier-label">(i.e. around 30 pax)</span>
         </div>
       </div>
 
@@ -160,7 +208,8 @@
            onmouseleave="hideInfo()">
         <div class="tier-inner">
           AI Practitioners
-          <span class="tier-label">~25% (~250 pax)</span>
+          <span class="tier-percent">~25%</span>
+          <span class="tier-label">(i.e. around 250 pax)</span>
         </div>
       </div>
 
@@ -169,7 +218,7 @@
            onmouseleave="hideInfo()">
         <div class="tier-inner">
           AI for Everyone
-          <span class="tier-label">100%</span>
+          <span class="tier-percent">100%</span>
         </div>
       </div>
 
@@ -249,4 +298,3 @@
 
 </body>
 </html>
-
